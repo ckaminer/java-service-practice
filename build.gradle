@@ -1,0 +1,54 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+sourceSets {
+	integrationTest {
+		java.srcDir file('integrationTest/java')
+		resources.srcDir file('integrationTest/resources')
+	}
+}
+
+test {
+	testLogging {
+		exceptionFormat = 'full'
+	}
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile('com.google.code.gson:gson:2.8.0')
+
+	// added in order to provide PATCH support to RestTemplates
+	compile 'org.apache.httpcomponents:httpclient:4.5.2'
+
+	integrationTestCompile sourceSets.main.output
+	integrationTestCompile configurations.testCompile
+	integrationTestCompile sourceSets.test.output
+	integrationTestRuntime configurations.testRuntime
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.4.1'
+}

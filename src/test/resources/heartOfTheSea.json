@@ -1,0 +1,29 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2017 The New York Times Company.  All Rights Reserved.",
+  "num_results": 1,
+  "results": [
+    {
+      "url": "http://www.nytimes.com/2000/05/24/books/books-of-the-times-no-ahab-but-one-destructive-whale.html",
+      "publication_dt": "2000-05-24",
+      "byline": "RICHARD BERNSTEIN",
+      "book_title": "In the Heart of the Sea: The Tragedy of the Whaleship Essex",
+      "book_author": "Nathaniel Philbrick",
+      "summary": "",
+      "isbn13": [
+        "9780141001821",
+        "9780143126812",
+        "9780606217811",
+        "9780606365741",
+        "9780670891573",
+        "9781101221570",
+        "9781101997765",
+        "9781439566718",
+        "9781504655798",
+        "9781568951782",
+        "9781568959443",
+        "9781611763577"
+      ]
+    }
+  ]
+}
